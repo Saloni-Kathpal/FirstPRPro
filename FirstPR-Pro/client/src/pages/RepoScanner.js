@@ -62,7 +62,7 @@ const RepoScanner = () => {
         setResults(null);
 
         try {
-            const response = await fetch('http://localhost:8000/scanner/analyze', {
+            const response = await fetch('https://firstprpro-1.onrender.com/scanner/analyze', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ url })
@@ -100,7 +100,7 @@ const RepoScanner = () => {
     const convertToIssue = async (issue, index) => {
         setConverting(prev => ({ ...prev, [index]: true }));
         try {
-            const response = await fetch(`http://localhost:8000/scanner/convert?repo_url=${encodeURIComponent(url || 'https://github.com/example/demo-repo')}`, {
+            const response = await fetch(`https://firstprpro-1.onrender.com/scanner/convert?repo_url=${encodeURIComponent(url || 'https://github.com/example/demo-repo')}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(issue)

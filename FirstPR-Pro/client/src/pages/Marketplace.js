@@ -21,7 +21,7 @@ const Marketplace = () => {
   });
 
   const fetchIssues = async () => {
-    let url = 'http://localhost:8000/marketplace/issues?';
+    let url = 'https://firstprpro-1.onrender.com/marketplace/issues?';
     if (difficultyFilter) url += `difficulty=${difficultyFilter}&`;
     if (statusFilter) url += `status=${statusFilter}`;
     
@@ -45,7 +45,7 @@ const Marketplace = () => {
     if (!user) return alert("Please login via Navbar first!");
     
     try {
-      const res = await fetch('http://localhost:8000/marketplace/issues', {
+      const res = await fetch('https://firstprpro-1.onrender.com/marketplace/issues', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formData, creator_name: user, creator_avatar: avatar })

@@ -16,7 +16,7 @@ const IssueDetail = () => {
 
   const fetchIssue = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/marketplace/issues/${id}`);
+      const res = await fetch(`https://firstprpro-1.onrender.com/marketplace/issues/${id}`);
       if (res.ok) setIssue(await res.json());
       else navigate('/marketplace');
     } catch (err) {
@@ -31,7 +31,7 @@ const IssueDetail = () => {
   const handleClaim = async () => {
     if (!user) return alert("Login to claim issues");
     try {
-      const res = await fetch(`http://localhost:8000/marketplace/issues/${id}/claim?username=${encodeURIComponent(user)}&avatar_url=${encodeURIComponent(avatar || '')}`, {
+      const res = await fetch(`https://firstprpro-1.onrender.com/marketplace/issues/${id}/claim?username=${encodeURIComponent(user)}&avatar_url=${encodeURIComponent(avatar || '')}`, {
         method: 'POST'
       });
       if (res.ok) fetchIssue();
@@ -45,7 +45,7 @@ const IssueDetail = () => {
     e.preventDefault();
     if (!user) return;
     try {
-      const res = await fetch(`http://localhost:8000/marketplace/issues/${id}/submit?username=${encodeURIComponent(user)}&avatar_url=${encodeURIComponent(avatar || '')}`, {
+      const res = await fetch(`https://firstprpro-1.onrender.com/marketplace/issues/${id}/submit?username=${encodeURIComponent(user)}&avatar_url=${encodeURIComponent(avatar || '')}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ solution })
@@ -64,7 +64,7 @@ const IssueDetail = () => {
 
   const handleRate = async (submissionId) => {
     try {
-      const res = await fetch(`http://localhost:8000/marketplace/issues/${id}/rate?submission_id=${submissionId}`, {
+      const res = await fetch(`https://firstprpro-1.onrender.com/marketplace/issues/${id}/rate?submission_id=${submissionId}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ rating: parseInt(rating) })

@@ -71,7 +71,7 @@ const Dashboard = () => {
     setSearched(true);
     setShowSuggestions(false);
     try {
-      const res = await fetch(`http://localhost:8000/issues?skills=${encodeURIComponent(query)}&level=${currentLevel}`);
+      const res = await fetch(`https://firstprpro-1.onrender.com/issues?skills=${encodeURIComponent(query)}&level=${currentLevel}`);
       if (!res.ok) throw new Error(`Server returned ${res.status}`);
       const data = await res.json();
       const englishOnly = Array.isArray(data) ? data.filter(isEnglishIssue) : [];

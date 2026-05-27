@@ -8,7 +8,7 @@ const Leaderboard = () => {
   useEffect(() => {
     const fetchBoard = async () => {
       try {
-        const res = await fetch('http://localhost:8000/leaderboard');
+        const res = await fetch('https://firstprpro-1.onrender.com/leaderboard');
         if (res.ok) {
           setUsers(await res.json());
         }

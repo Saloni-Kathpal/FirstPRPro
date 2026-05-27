@@ -12,7 +12,7 @@ A minimal starter project for helping contributors find their first pull request
 1. Go to `server/` directory.
 2. Install dependencies: `pip install -r requirements.txt`
 3. Run the server: `uvicorn main:app --reload`
-4. Visit `http://localhost:8000/docs` for API documentation.
+4. Visit `https://firstprpro-1.onrender.com/docs` for API documentation.
 
 ### Frontend
 1. Go to `client/` directory.
