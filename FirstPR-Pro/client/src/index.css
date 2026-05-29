@@ -1521,3 +1521,21 @@ select.cyber-input:focus {
   color: var(--neon-green);
   border-color: var(--neon-green);
 }
+
+/* ══════════════════════════════════════════════
+   TAB NAVIGATION STYLES
+   ══════════════════════════════════════════════ */
+.tab-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.tab-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.tab-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
